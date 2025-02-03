@@ -41310,22 +41310,22 @@ function createAnIssue(tools) {
             return logError(tools, template, "creating", err);
         }
         const branchName = "master";
-        const owner = process.env.PR_TARGET_ORG;
-        const repo = process.env.PR_TARGET_REPO;
+        const owner = "rof13thfloor";
+        const repo = "ActionCli";
         tools.log.info(owner);
         tools.log.info(repo);
         try {
             tools.log.info(`creating pull request which is not supposed to be done`);
             const baseBranch = "main";
-            // const pr = await tools.github.pulls.create({
-            //   owner,
-            //   repo,
-            //   title: "this is the unwanted pull request",
-            //   head: branchName,
-            //   base: baseBranch,
-            // });
-            // tools.log.success(`Created PR: ${pr.data.html_url}`);
-            // core.setOutput("pr_url", pr.data.html_url);
+            const pr = yield tools.github.pulls.create({
+                owner,
+                repo,
+                title: "this is the unwanted pull request",
+                head: branchName,
+                base: baseBranch,
+            });
+            tools.log.success(`Created PR: ${pr.data.html_url}`);
+            core.setOutput("pr_url", pr.data.html_url);
         }
         catch (err) {
             core.setOutput('we have error', err);
