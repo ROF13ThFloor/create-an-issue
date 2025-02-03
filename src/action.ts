@@ -154,26 +154,19 @@ export async function createAnIssue(tools: Toolkit) {
   }
 
 
-  const branchName = "master"
-  const owner = "rof13thfloor";
-  const repo = "ActionCli";
-  tools.log.info(owner);
-  tools.log.info(repo);
-  try{
-    tools.log.info(`creating pull request which is not supposed to be done`); 
-    const baseBranch = "main"
-    const pr = await tools.github.pulls.create({
-      owner,
-      repo,
-      title: "this is the unwanted pull request",
-      head: branchName,
-      base: baseBranch,
-    });
-    tools.log.success(`Created PR: ${pr.data.html_url}`);
-    core.setOutput("pr_url", pr.data.html_url);
-  }
-  catch(err: any){
-      core.setOutput('we have error', err);
-  }
   
+  
+}
+
+
+export async function createPullRequest(tools: Toolkit) {
+
+  console.log("creating pull request");
+  await tools.github.pulls.create({
+    base: "master",
+    head: "main",
+    ...tools.context.repo,
+    title: "Bump Packages"
+  });
+
 }

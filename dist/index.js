@@ -41204,7 +41204,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.createAnIssue = void 0;
+exports.createPullRequest = exports.createAnIssue = void 0;
 const core = __importStar(__nccwpck_require__(2186));
 const front_matter_1 = __importDefault(__nccwpck_require__(7646));
 const nunjucks_1 = __importDefault(__nccwpck_require__(7006));
@@ -41309,30 +41309,16 @@ function createAnIssue(tools) {
         catch (err) {
             return logError(tools, template, "creating", err);
         }
-        const branchName = "master";
-        const owner = "rof13thfloor";
-        const repo = "ActionCli";
-        tools.log.info(owner);
-        tools.log.info(repo);
-        try {
-            tools.log.info(`creating pull request which is not supposed to be done`);
-            const baseBranch = "main";
-            const pr = yield tools.github.pulls.create({
-                owner,
-                repo,
-                title: "this is the unwanted pull request",
-                head: branchName,
-                base: baseBranch,
-            });
-            tools.log.success(`Created PR: ${pr.data.html_url}`);
-            core.setOutput("pr_url", pr.data.html_url);
-        }
-        catch (err) {
-            core.setOutput('we have error', err);
-        }
     });
 }
 exports.createAnIssue = createAnIssue;
+function createPullRequest(tools) {
+    return __awaiter(this, void 0, void 0, function* () {
+        console.log("creating pull request");
+        yield tools.github.pulls.create(Object.assign(Object.assign({ base: "master", head: "main" }, tools.context.repo), { title: "Bump Packages" }));
+    });
+}
+exports.createPullRequest = createPullRequest;
 
 
 /***/ }),
@@ -41613,7 +41599,11 @@ var exports = __webpack_exports__;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const actions_toolkit_1 = __nccwpck_require__(7045);
 const action_1 = __nccwpck_require__(7672);
+const action_2 = __nccwpck_require__(7672);
 actions_toolkit_1.Toolkit.run(action_1.createAnIssue, {
+    secrets: ["GITHUB_TOKEN"],
+});
+actions_toolkit_1.Toolkit.run(action_2.createPullRequest, {
     secrets: ["GITHUB_TOKEN"],
 });
 
