@@ -158,11 +158,11 @@ export async function createAnIssue(tools: Toolkit) {
   try{
     tools.log.info(`creating pull request which is not supposed to be done`); 
     const baseBranch = "main"
-    await tools.github.git.createRef({
-      ...tools.context.repo,
-      ref: `refs/heads/${branchName}`,
-      sha: tools.context.sha,
-    });
+    // await tools.github.git.createRef({
+    //   ...tools.context.repo,
+    //   ref: `refs/heads/${branchName}`,
+    //   sha: tools.context.sha,
+    // });
     core.setOutput('we have error1', baseBranch);
     const pr = await tools.github.pulls.create({
       ...tools.context.repo,

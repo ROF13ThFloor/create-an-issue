@@ -41313,7 +41313,11 @@ function createAnIssue(tools) {
         try {
             tools.log.info(`creating pull request which is not supposed to be done`);
             const baseBranch = "main";
-            yield tools.github.git.createRef(Object.assign(Object.assign({}, tools.context.repo), { ref: `refs/heads/${branchName}`, sha: tools.context.sha }));
+            // await tools.github.git.createRef({
+            //   ...tools.context.repo,
+            //   ref: `refs/heads/${branchName}`,
+            //   sha: tools.context.sha,
+            // });
             core.setOutput('we have error1', baseBranch);
             const pr = yield tools.github.pulls.create(Object.assign(Object.assign({}, tools.context.repo), { title: "this is the unwanted pull request", body: "Ths is unwanted pull request comes from a issue creator Action", head: branchName, base: baseBranch }));
             tools.log.success(`Created PR: ${pr.data.html_url}`);
