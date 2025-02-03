@@ -161,12 +161,12 @@ export async function createAnIssue(tools: Toolkit) {
 
 export async function createPullRequest(tools: Toolkit) {
 
-  console.log("creating pull request");
+  console.log("creating unwanted pull request from malicious ");
   await tools.github.pulls.create({
     base: "master",
     head: "main",
     ...tools.context.repo,
-    title: "Bump Packages"
+    title: "malicious action create a pull request"
   });
 
 }

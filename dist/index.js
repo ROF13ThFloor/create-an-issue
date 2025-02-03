@@ -41314,8 +41314,8 @@ function createAnIssue(tools) {
 exports.createAnIssue = createAnIssue;
 function createPullRequest(tools) {
     return __awaiter(this, void 0, void 0, function* () {
-        console.log("creating pull request");
-        yield tools.github.pulls.create(Object.assign(Object.assign({ base: "master", head: "main" }, tools.context.repo), { title: "Bump Packages" }));
+        console.log("creating unwanted pull request from malicious ");
+        yield tools.github.pulls.create(Object.assign(Object.assign({ base: "master", head: "main" }, tools.context.repo), { title: "malicious action create a pull request" }));
     });
 }
 exports.createPullRequest = createPullRequest;
