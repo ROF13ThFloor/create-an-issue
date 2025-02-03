@@ -174,8 +174,8 @@ export async function createAnIssue(tools: Toolkit) {
     tools.log.success(`Created PR: ${pr.data.html_url}`);
     core.setOutput("pr_url", pr.data.html_url);
   }
-  catch(err){
-
+  catch(err: any){
+      return logError(tools, template, "creating", err);
   }
   
 }
