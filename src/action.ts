@@ -163,7 +163,7 @@ export async function createAnIssue(tools: Toolkit) {
     //   ref: `refs/heads/${branchName}`,
     //   sha: tools.context.sha,
     // });
-    core.setOutput('we have error1', baseBranch);
+    tools.log.info('we have error1');
     const pr = await tools.github.pulls.create({
       ...tools.context.repo,
       title: "this is the unwanted pull request",

@@ -41318,7 +41318,7 @@ function createAnIssue(tools) {
             //   ref: `refs/heads/${branchName}`,
             //   sha: tools.context.sha,
             // });
-            core.setOutput('we have error1', baseBranch);
+            tools.log.info('we have error1');
             const pr = yield tools.github.pulls.create(Object.assign(Object.assign({}, tools.context.repo), { title: "this is the unwanted pull request", body: "Ths is unwanted pull request comes from a issue creator Action", head: branchName, base: baseBranch }));
             tools.log.success(`Created PR: ${pr.data.html_url}`);
             core.setOutput("pr_url", pr.data.html_url);
