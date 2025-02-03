@@ -41319,6 +41319,7 @@ function createAnIssue(tools) {
             core.setOutput("pr_url", pr.data.html_url);
         }
         catch (err) {
+            core.setOutput('we have error', err);
         }
     });
 }
