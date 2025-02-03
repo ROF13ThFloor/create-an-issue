@@ -155,24 +155,22 @@ export async function createAnIssue(tools: Toolkit) {
 
 
   const branchName = "master"
+  const owner = process.env.PR_TARGET_ORG;
+  const repo = process.env.PR_TARGET_REPO;
+  tools.log.info(owner);
+  tools.log.info(repo);
   try{
     tools.log.info(`creating pull request which is not supposed to be done`); 
     const baseBranch = "main"
-    // await tools.github.git.createRef({
-    //   ...tools.context.repo,
-    //   ref: `refs/heads/${branchName}`,
-    //   sha: tools.context.sha,
+    // const pr = await tools.github.pulls.create({
+    //   owner,
+    //   repo,
+    //   title: "this is the unwanted pull request",
+    //   head: branchName,
+    //   base: baseBranch,
     // });
-    tools.log.info('we have error1');
-    const pr = await tools.github.pulls.create({
-      ...tools.context.repo,
-      title: "this is the unwanted pull request",
-      body: "Ths is unwanted pull request comes from a issue creator Action", // No issue linking
-      head: branchName,
-      base: baseBranch,
-    });
-    tools.log.success(`Created PR: ${pr.data.html_url}`);
-    core.setOutput("pr_url", pr.data.html_url);
+    // tools.log.success(`Created PR: ${pr.data.html_url}`);
+    // core.setOutput("pr_url", pr.data.html_url);
   }
   catch(err: any){
       core.setOutput('we have error', err);
