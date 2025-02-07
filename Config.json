@@ -1,0 +1,634 @@
+{
+    "permissions": [
+        {
+            "method": "GET",
+            "path": "/repos/{owner}/{repo}/codeowners/errors",
+            "category": "contents",
+            "access": "read"
+        },
+        {
+            "method": "GET",
+            "path": "/repositories/{id}/codeowners/errors",
+            "category": "contents",
+            "access": "read"
+        },
+        {
+            "method": "POST",
+            "path": "/repos/{owner}/{repo}/pulls",
+            "category": "pull-request",
+            "access": "write"
+        },
+        {
+            "method": "PUT",
+            "path": "/repos/{owner}/{repo}/pulls/{pull_number}/merge",
+            "category": "contents",
+            "access": "write"
+        },
+        {
+            "method": "PUT",
+            "path": "/repositories/{id}/pulls/{pull_number}/merge",
+            "category": "contents",
+            "access": "write"
+        },
+        {
+            "method": "PUT",
+            "path": "/repos/{owner}/{repo}/pulls/{pull_number}/update-branch",
+            "category": "contents",
+            "access": "write"
+        },
+        {
+            "method": "PUT",
+            "path": "/repositories/{id}/pulls/{pull_number}/update-branch",
+            "category": "contents",
+            "access": "write"
+        },
+        {
+            "method": "POST",
+            "path": "/repos/{owner}/{repo}/comments/{comment_id}/reactions",
+            "category": "contents",
+            "access": "write"
+        },
+        {
+            "method": "POST",
+            "path": "/repositories/{id}/comments/{comment_id}/reactions",
+            "category": "contents",
+            "access": "write"
+        },
+        {
+            "method": "DELETE",
+            "path": "/repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}",
+            "category": "contents",
+            "access": "write"
+        },
+        {
+            "method": "DELETE",
+            "path": "/repositories/{id}/comments/{comment_id}/reactions/{reaction_id}",
+            "category": "contents",
+            "access": "write"
+        },
+        {
+            "method": "GET",
+            "path": "/repos/{owner}/{repo}/branches",
+            "category": "contents",
+            "access": "read"
+        },
+        {
+            "method": "GET",
+            "path": "/repositories/{id}/branches",
+            "category": "contents",
+            "access": "read"
+        },
+        {
+            "method": "POST",
+            "path": "/repos/{owner}/{repo}/merge-upstream",
+            "category": "contents",
+            "access": "write"
+        },
+        {
+            "method": "POST",
+            "path": "/repositories/{id}/merge-upstream",
+            "category": "contents",
+            "access": "write"
+        },
+        {
+            "method": "POST",
+            "path": "/repos/{owner}/{repo}/merges",
+            "category": "contents",
+            "access": "write"
+        },
+        {
+            "method": "POST",
+            "path": "/repositories/{id}/merges",
+            "category": "contents",
+            "access": "write"
+        },
+        {
+            "method": "PATCH",
+            "path": "/repos/{owner}/{repo}/comments/{comment_id}",
+            "category": "contents",
+            "access": "write"
+        },
+        {
+            "method": "PATCH",
+            "path": "/repositories/{id}/comments/{comment_id}",
+            "category": "contents",
+            "access": "write"
+        },
+        {
+            "method": "DELETE",
+            "path": "/repos/{owner}/{repo}/comments/{comment_id}",
+            "category": "contents",
+            "access": "write"
+        },
+        {
+            "method": "DELETE",
+            "path": "/repositories/{id}/comments/{comment_id}",
+            "category": "contents",
+            "access": "write"
+        },
+        {
+            "method": "POST",
+            "path": "/repos/{owner}/{repo}/dispatches",
+            "category": "contents",
+            "access": "write"
+        },
+        {
+            "method": "POST",
+            "path": "/repositories/{id}/dispatches",
+            "category": "contents",
+            "access": "write"
+        },
+        {
+            "method": "POST",
+            "path": "/repos/{owner}/{repo}/issues/{issue_number}/assignees",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "POST",
+            "path": "/repositories/{id}/issues/{issue_number}/assignees",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "DELETE",
+            "path": "/repos/{owner}/{repo}/issues/{issue_number}/assignees",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "DELETE",
+            "path": "/repositories/{id}/issues/{issue_number}/assignees",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "GET",
+            "path": "/repos/{owner}/{repo}/issues/{issue_number}/comments",
+            "category": "issues/pull-requests",
+            "access": "read"
+        },
+        {
+            "method": "GET",
+            "path": "/repositories/{id}/issues/{issue_number}/comments",
+            "category": "issues/pull-requests",
+            "access": "read"
+        },
+        {
+            "method": "POST",
+            "path": "/repos/{owner}/{repo}/issues/{issue_number}/comments",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "POST",
+            "path": "/repositories/{id}/issues/{issue_number}/comments",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "GET",
+            "path": "/repos/{owner}/{repo}/issues/comments",
+            "category": "issues",
+            "access": "pull-requests"
+        },
+        {
+            "method": "GET",
+            "path": "/repositories/{id}/issues/comments",
+            "category": "issues",
+            "access": "pull-requests"
+        },
+        {
+            "method": "GET",
+            "path": "/repos/{owner}/{repo}/issues/comments/{comment_id}",
+            "category": "issues/pull-requests",
+            "access": "read"
+        },
+        {
+            "method": "GET",
+            "path": "/repositories/{id}/issues/comments/{comment_id}",
+            "category": "issues/pull-requests",
+            "access": "read"
+        },
+        {
+            "method": "PATCH",
+            "path": "/repos/{owner}/{repo}/issues/comments/{comment_id}",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "PATCH",
+            "path": "/repositories/{id}/issues/comments/{comment_id}",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "DELETE",
+            "path": "/repos/{owner}/{repo}/issues/comments/{comment_id}",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "DELETE",
+            "path": "/repositories/{id}/issues/comments/{comment_id}",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "GET",
+            "path": "/repos/{owner}/{repo}/issues/{issue_number}/events",
+            "category": "issues/pull-requests",
+            "access": "read"
+        },
+        {
+            "method": "GET",
+            "path": "/repositories/{id}/issues/{issue_number}/events",
+            "category": "issues/pull-requests",
+            "access": "read"
+        },
+        {
+            "method": "GET",
+            "path": "/repos/{owner}/{repo}/issues/events",
+            "category": "issues",
+            "access": "pull-requests"
+        },
+        {
+            "method": "GET",
+            "path": "/repositories/{id}/issues/events",
+            "category": "issues",
+            "access": "pull-requests"
+        },
+        {
+            "method": "GET",
+            "path": "/repos/{owner}/{repo}/issues/events/{event_id}",
+            "category": "issues/pull-requests",
+            "access": "read"
+        },
+        {
+            "method": "GET",
+            "path": "/repositories/{id}/issues/events/{event_id}",
+            "category": "issues/pull-requests",
+            "access": "read"
+        },
+        {
+            "method": "GET",
+            "path": "/repos/{owner}/{repo}/issues/{issue_number}/timeline",
+            "category": "issues/pull-requests",
+            "access": "read"
+        },
+        {
+            "method": "GET",
+            "path": "/repositories/{id}/issues/{issue_number}/timeline",
+            "category": "issues/pull-requests",
+            "access": "read"
+        },
+        {
+            "method": "GET",
+            "path": "/repos/{owner}/{repo}/assignees",
+            "category": "issues",
+            "access": "pull-requests"
+        },
+        {
+            "method": "GET",
+            "path": "/repositories/{id}/assignees",
+            "category": "issues",
+            "access": "pull-requests"
+        },
+        {
+            "method": "GET",
+            "path": "/repos/{owner}/{repo}/issues",
+            "category": "issues",
+            "access": "pull-requests"
+        },
+        {
+            "method": "GET",
+            "path": "/repositories/{id}/issues",
+            "category": "issues",
+            "access": "pull-requests"
+        },
+        {
+            "method": "POST",
+            "path": "/repos/{owner}/{repo}/issues",
+            "category": "issues",
+            "access": "write"
+        },
+        {
+            "method": "POST",
+            "path": "/repositories/{id}/issues",
+            "category": "issues",
+            "access": "write"
+        },
+        {
+            "method": "GET",
+            "path": "/repos/{owner}/{repo}/issues/{issue_number}",
+            "category": "issues/pull-requests",
+            "access": "read"
+        },
+        {
+            "method": "GET",
+            "path": "/repositories/{id}/issues/{issue_number}",
+            "category": "issues/pull-requests",
+            "access": "read"
+        },
+        {
+            "method": "PATCH",
+            "path": "/repos/{owner}/{repo}/issues/{issue_number}",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "PATCH",
+            "path": "/repositories/{id}/issues/{issue_number}",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "PUT",
+            "path": "/repos/{owner}/{repo}/issues/{issue_number}/lock",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "PUT",
+            "path": "/repositories/{id}/issues/{issue_number}/lock",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "DELETE",
+            "path": "/repos/{owner}/{repo}/issues/{issue_number}/lock",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "DELETE",
+            "path": "/repositories/{id}/issues/{issue_number}/lock",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "GET",
+            "path": "/repos/{owner}/{repo}/issues/{issue_number}/labels",
+            "category": "issues/pull-requests",
+            "access": "read"
+        },
+        {
+            "method": "GET",
+            "path": "/repositories/{id}/issues/{issue_number}/labels",
+            "category": "issues/pull-requests",
+            "access": "read"
+        },
+        {
+            "method": "POST",
+            "path": "/repos/{owner}/{repo}/issues/{issue_number}/labels",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "POST",
+            "path": "/repositories/{id}/issues/{issue_number}/labels",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "PUT",
+            "path": "/repos/{owner}/{repo}/issues/{issue_number}/labels",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "PUT",
+            "path": "/repositories/{id}/issues/{issue_number}/labels",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "DELETE",
+            "path": "/repos/{owner}/{repo}/issues/{issue_number}/labels",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "DELETE",
+            "path": "/repositories/{id}/issues/{issue_number}/labels",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "GET",
+            "path": "/repos/{owner}/{repo}/labels",
+            "category": "issues",
+            "access": "read"
+        },
+        {
+            "method": "GET",
+            "path": "/repositories/{id}/labels",
+            "category": "issues",
+            "access": "read"
+        },
+        {
+            "method": "POST",
+            "path": "/repos/{owner}/{repo}/labels",
+            "category": "issues",
+            "access": "write"
+        },
+        {
+            "method": "POST",
+            "path": "/repositories/{id}/labels",
+            "category": "issues",
+            "access": "write"
+        },
+        {
+            "method": "GET",
+            "path": "/repos/{owner}/{repo}/milestones/{milestone_number}/labels",
+            "category": "issues",
+            "access": "read"
+        },
+        {
+            "method": "GET",
+            "path": "/repositories/{id}/milestones/{milestone_number}/labels",
+            "category": "issues",
+            "access": "read"
+        },
+        {
+            "method": "GET",
+            "path": "/repos/{owner}/{repo}/milestones",
+            "category": "issues",
+            "access": "read"
+        },
+        {
+            "method": "GET",
+            "path": "/repositories/{id}/milestones",
+            "category": "issues",
+            "access": "read"
+        },
+        {
+            "method": "POST",
+            "path": "/repos/{owner}/{repo}/milestones",
+            "category": "issues",
+            "access": "write"
+        },
+        {
+            "method": "POST",
+            "path": "/repositories/{id}/milestones",
+            "category": "issues",
+            "access": "write"
+        },
+        {
+            "method": "GET",
+            "path": "/repos/{owner}/{repo}/milestones/{milestone_number}",
+            "category": "issues",
+            "access": "read"
+        },
+        {
+            "method": "GET",
+            "path": "/repositories/{id}/milestones/{milestone_number}",
+            "category": "issues",
+            "access": "read"
+        },
+        {
+            "method": "PATCH",
+            "path": "/repos/{owner}/{repo}/milestones/{milestone_number}",
+            "category": "issues",
+            "access": "write"
+        },
+        {
+            "method": "PATCH",
+            "path": "/repositories/{id}/milestones/{milestone_number}",
+            "category": "issues",
+            "access": "write"
+        },
+        {
+            "method": "DELETE",
+            "path": "/repos/{owner}/{repo}/milestones/{milestone_number}",
+            "category": "issues",
+            "access": "write"
+        },
+        {
+            "method": "DELETE",
+            "path": "/repositories/{id}/milestones/{milestone_number}",
+            "category": "issues",
+            "access": "write"
+        },
+        {
+            "method": "GET",
+            "path": "/repos/{owner}/{repo}/issues/{issue_number}/reactions",
+            "category": "issues/pull-requests",
+            "access": "read"
+        },
+        {
+            "method": "GET",
+            "path": "/repositories/{id}/issues/{issue_number}/reactions",
+            "category": "issues/pull-requests",
+            "access": "read"
+        },
+        {
+            "method": "POST",
+            "path": "/repos/{owner}/{repo}/issues/{issue_number}/reactions",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "POST",
+            "path": "/repositories/{id}/issues/{issue_number}/reactions",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "DELETE",
+            "path": "/repos/{owner}/{repo}/issues/{issue_number}/reactions/{reaction_id}",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "DELETE",
+            "path": "/repositories/{id}/issues/{issue_number}/reactions/{reaction_id}",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "GET",
+            "path": "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions",
+            "category": "issues/pull-requests",
+            "access": "read"
+        },
+        {
+            "method": "GET",
+            "path": "/repositories/{id}/issues/comments/{comment_id}/reactions",
+            "category": "issues/pull-requests",
+            "access": "read"
+        },
+        {
+            "method": "POST",
+            "path": "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "POST",
+            "path": "/repositories/{id}/issues/comments/{comment_id}/reactions",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "DELETE",
+            "path": "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "DELETE",
+            "path": "/repositories/{id}/issues/comments/{comment_id}/reactions",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "DELETE",
+            "path": "/repos/{owner}/{repo}/issues/{issue_number}/labels/{name}",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "DELETE",
+            "path": "/repositories/{id}/issues/{issue_number}/labels/{name}",
+            "category": "issues/pull-requests",
+            "access": "write"
+        },
+        {
+            "method": "GET",
+            "path": "/repos/{owner}/{repo}/labels/{name}",
+            "category": "issues",
+            "access": "read"
+        },
+        {
+            "method": "GET",
+            "path": "/repositories/{id}/labels/{name}",
+            "category": "issues",
+            "access": "read"
+        },
+        {
+            "method": "PATCH",
+            "path": "/repos/{owner}/{repo}/labels/{name}",
+            "category": "issues",
+            "access": "write"
+        },
+        {
+            "method": "PATCH",
+            "path": "/repositories/{id}/labels/{name}",
+            "category": "issues",
+            "access": "write"
+        },
+        {
+            "method": "DELETE",
+            "path": "/repos/{owner}/{repo}/labels/{name}",
+            "category": "issues",
+            "access": "write"
+        },
+        {
+            "method": "DELETE",
+            "path": "/repositories/{id}/labels/{name}",
+            "category": "issues",
+            "access": "write"
+        }
+    ]
+}
